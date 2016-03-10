@@ -47,4 +47,8 @@ public class FmdButton extends LinearLayout implements View.OnClickListener {
         void itemButtonClicked(View view);
         void itemImageButtonClicked(View view);
     }
+
+    public void setText(String text) {
+        action.setText(text);
+    }
 }

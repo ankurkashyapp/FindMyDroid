@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+
+    <color name="colorPrimary">#ef6c00</color>
+    <color name="colorPrimaryDark">#e65100</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Project Colors -->
+
+    <color name="blackTransparent" >#960e0d0d</color>
+    <color name="blackDarkTransparent">#C80E0D0D</color>
 </resources>
