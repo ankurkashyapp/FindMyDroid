@@ -43,12 +43,16 @@ public class FmdButton extends LinearLayout implements View.OnClickListener {
             fmdButtonListener.itemImageButtonClicked(view);
     }
 
+    public void setText(String text) {
+        action.setText(text);
+    }
+
+    public void setDrawableLeft(int left) {
+        action.setCompoundDrawablesWithIntrinsicBounds(left, 0, 0, 0);
+    }
+
     public interface FmdButtonListener {
         void itemButtonClicked(View view);
         void itemImageButtonClicked(View view);
-    }
-
-    public void setText(String text) {
-        action.setText(text);
     }
 }

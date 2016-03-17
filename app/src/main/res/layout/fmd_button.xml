@@ -18,6 +18,6 @@
         android:layout_weight="1"
         android:src="@drawable/ic_help"
         android:tint="@android:color/white"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/colorPrimarySlightDark"/>
 
 </merge>

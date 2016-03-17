@@ -9,9 +9,9 @@
     android:foreground="@drawable/selector_black_transparent" >
 
     <RelativeLayout
+        android:id="@+id/feature_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/feature_background" >
+        android:layout_height="match_parent">
 
         <View
             android:layout_width="match_parent"

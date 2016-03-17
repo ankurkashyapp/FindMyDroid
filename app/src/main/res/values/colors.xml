@@ -3,10 +3,14 @@
 
     <color name="colorPrimary">#ef6c00</color>
     <color name="colorPrimaryDark">#e65100</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimarySlightDark">#c94700</color>
+    <color name="colorPrimaryExtraDark">#bf360c</color>
+    <color name="colorAccent">#ef6c00</color>
 
     <!-- Project Colors -->
 
-    <color name="blackTransparent" >#960e0d0d</color>
+    <color name="white">#fff</color>
+    <color name="blackTransparent" >#a10e0d0d</color>
     <color name="blackDarkTransparent">#C80E0D0D</color>
+
 </resources>

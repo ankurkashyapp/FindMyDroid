@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.findmydroid.app.R;
@@ -59,11 +60,27 @@ public class FeaturesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         switch (holder.getItemViewType()) {
 
             case TYPE_HOME_SETTINGS: MainSettingsViewHolder settingsViewHolder = (MainSettingsViewHolder)holder;
+                settingsViewHolder.deviceAdmin.setDrawableLeft(R.drawable.ic_check);
+                settingsViewHolder.uninstallDefence.setDrawableLeft(R.drawable.ic_cross);
                 break;
 
             case TYPE_FEATURES: FeatureViewsHolder featureViewsHolder = (FeatureViewsHolder)holder;
-                featureViewsHolder.featureImage.setBackgroundResource(featuresImages[position-1]);
-                featureViewsHolder.featureTitle.setText(featuresTitles[position-1]);break;
+                featureViewsHolder.featureImage.setBackgroundResource(featuresImages[position - 1]);
+                featureViewsHolder.featureTitle.setText(featuresTitles[position-1]);
+                setFeatureBackground(featureViewsHolder.featureBackground, position);break;
+        }
+    }
+
+    private void setFeatureBackground(RelativeLayout featureBackground, int position) {
+        switch (position) {
+            case 1:featureBackground.setBackgroundResource(R.drawable.ic_back_lock);break;
+            case 2:featureBackground.setBackgroundResource(R.drawable.ic_back_calls);break;
+            case 3:featureBackground.setBackgroundResource(R.drawable.ic_back_sd_card);break;
+            case 4:featureBackground.setBackgroundResource(R.drawable.ic_back_ringing);break;
+            case 5:featureBackground.setBackgroundResource(R.drawable.ic_back_calls);break;
+            case 6:featureBackground.setBackgroundResource(R.drawable.ic_back_wifi);break;
+            case 7:featureBackground.setBackgroundResource(R.drawable.ic_back_data);break;
+            case 8:featureBackground.setBackgroundResource(R.drawable.ic_back_flashlight);break;
         }
     }
 
@@ -82,6 +99,7 @@ public class FeaturesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public class FeatureViewsHolder extends RecyclerView.ViewHolder {
 
+        private RelativeLayout featureBackground;
         private ImageView featureImage;
         private TextView featureTitle;
         public FeatureViewsHolder(View itemView) {
@@ -90,6 +108,7 @@ public class FeaturesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         private void initializeViews(View itemView) {
+            featureBackground = (RelativeLayout)itemView.findViewById(R.id.feature_background);
             featureImage = (ImageView)itemView.findViewById(R.id.feature_image);
             featureTitle = (TextView)itemView.findViewById(R.id.feature_title);
         }

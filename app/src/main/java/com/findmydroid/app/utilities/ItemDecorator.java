@@ -29,6 +29,10 @@ public class ItemDecorator extends RecyclerView.ItemDecoration {
         else {
             outRect.left = space;
         }
+        if (itemPosition==0) {
+            outRect.left = 0;
+            outRect.right = 0;
+        }
 
     }
 }
