@@ -13,4 +13,31 @@
     <string name="title_uninstall_defence">Uninstall Defence</string>
     <string name="description_uninstall_defence">In order to make sure that no one can uninstall this app from your phone after getting lost or misplaced, you must enable the uninstall defence functionality.</string>
 
+
+    <!--Features and Description -->
+
+    <string name="lock">Remotely Lock Phone</string>
+    <string name="lock_command_description">Send the above code to lock your phone in case it is lost or misplaced. It will immediately lock your phone with the password you send in the code. Example: \'Fmd Lock 456321\' without quotes.</string>
+
+    <string name="location">Track Location</string>
+    <string name="location_command_description">Send the above code to receive the current location of your phone as a text message. It will immediately send your phone\'s current location. Example: \'Fmd Track\' without quotes.</string>
+
+    <string name="sd_card">Format Sd Card</string>
+    <string name="sd_card_command_description">If set to ON, you can format the data of your sd card in order to avoid any bad usage. Send the above code to format your sd card Example: \'Fmd Format\' without quotes.</string>
+
+    <string name="ringing">Change Ringing Mode</string>
+    <string name="ringing_command_description">Send the above code to change the ringing mode of your phone of your choice Example: \'Fmd Mode Silent\' without quotes for silent mode OR \'Fmd Mode Vibrate\' without quotes for vibration mode.</string>
+
+    <string name="calls">Forward Calls</string>
+    <string name="calls_command_description">If you want the calls of your lost phone to be diverted to your any other personal number then send the above code to your lost phone and all the calls will be diverted to your number Example: \'Fmd Forward\' without quotes.</string>
+
+    <string name="wifi">Wifi ON/OFF</string>
+    <string name="wifi_command_description">Change the status of your lost phone\'s wifi with this command. Example: \'Fmd Wifi On\' OR \'Fmd Wifi Off\' without quotes.</string>
+
+    <string name="data">Mobile Data ON/OFF</string>
+    <string name="data_command_description">Change the status of your lost phone\'s mobile data with this command. Example: \'Fmd Data On\' OR \'Fmd Data Off\' without quotes.</string>
+
+    <string name="flashlight">Flashlight ON/OFF</string>
+    <string name="flashlight_command_description">If you want to scare the person who is using your phone with the continuous On/Off of your flashlight, the send the above code to do so. Example: \'Fmd Flashlight 50\' , Your flashlight will flash continuously for 50 times.</string>
+
 </resources>

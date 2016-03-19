@@ -5,6 +5,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,18 @@ import com.findmydroid.app.utilities.ItemDecorator;
 public class HomeFragment extends Fragment implements FmdButton.FmdButtonListener, FeaturesListAdapter.OnFeatureClickListener {
     private static final int RESULT_ENABLE=1;
     private static final int COLUMNS_NO=2;
+
+    public static final String FEATURE_STATUS = "featureStatus";
+    public static final String LOCK = "lock";
+    public static final String LOCATION = "location";
+    public static final String SD_CARD = "sdCard";
+    public static final String RINGING = "ringing";
+    public static final String CALLS = "calls";
+    public static final String WIFI = "wifi";
+    public static final String DATA = "data";
+    public static final String FLASHLIGHT = "flashlight";
+
+
     private RecyclerView featuresList;
 
     private DevicePolicyManager devicePolicyManager;
@@ -122,6 +135,115 @@ public class HomeFragment extends Fragment implements FmdButton.FmdButtonListene
 
     @Override
     public void onFeatureClick(View view) {
+        int clickedPosition = featuresList.getChildLayoutPosition(view);
+
+        switch (clickedPosition) {
+            case 1:showLockDialog(clickedPosition);break;
+            case 2:showLocationDialog(clickedPosition);break;
+            case 3:showSdCardDialog(clickedPosition);break;
+            case 4:showRingingDialog(clickedPosition);break;
+            case 5:showCallsDialog(clickedPosition);break;
+            case 6:showWifiDialog(clickedPosition);break;
+            case 7:showDataDialog(clickedPosition);break;
+            case 8:showFlashlightDialog(clickedPosition);break;
+        }
+
+    }
+
+    private void showLockDialog(int position) {
+        String command = "Fmd Lock <password>";
+        String title = getString(R.string.lock);
+        String description = getString(R.string.lock_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), LOCK);
+    }
+
+    private void showLocationDialog(int position) {
+        String command = "Fmd Track";
+        String title = getString(R.string.location);
+        String description = getString(R.string.location_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), LOCATION);
+    }
+
+    private void showSdCardDialog(int position) {
+        String command = "Fmd Format";
+        String title = getString(R.string.sd_card);
+        String description = getString(R.string.sd_card_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), SD_CARD);
+    }
+
+    private void showRingingDialog(int position) {
+
+        String command = "Fmd Mode Vibrate\n" + "Fmd Mode Silent\n" + "Fmd Mode Normal";
+        String title = getString(R.string.ringing);
+        String description = getString(R.string.ringing_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), RINGING);
+    }
+
+    private void showCallsDialog(int position) {
+        String command = "Fmd Forward";
+        String title = getString(R.string.calls);
+        String description = getString(R.string.calls_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), CALLS);
+    }
+
+    private void showWifiDialog(int position) {
+        String command = "Fmd Wifi On"+"\nFmd Wifi Off";
+        String title = getString(R.string.wifi);
+        String description = getString(R.string.wifi_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), WIFI);
+    }
+
+    private void showDataDialog(int position) {
+        String command = "Fmd Data On"+"\nFmd Data Off";
+        String title = getString(R.string.data);
+        String description = getString(R.string.data_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), DATA);
+    }
+
+    private void showFlashlightDialog(int position) {
+        String command = "Fmd Flashlight <count>";
+        String title = getString(R.string.flashlight);
+        String description = getString(R.string.flashlight_command_description);
+        boolean status = getFeatureStatus(position);
+
+        FeatureHelpDialog featureHelpDialog = FeatureHelpDialog.newInstance(position, title, status, command, description);
+        featureHelpDialog.show(getActivity().getSupportFragmentManager(), FLASHLIGHT);
+    }
+
+    private boolean getFeatureStatus(int position) {
+        SharedPreferences preferences = getActivity().getSharedPreferences(FEATURE_STATUS, Context.MODE_PRIVATE);
+        switch (position) {
+            case 1:return preferences.getBoolean(LOCK, true);
+            case 2:return preferences.getBoolean(LOCATION, true);
+            case 3:return preferences.getBoolean(SD_CARD, true);
+            case 4:return preferences.getBoolean(RINGING, true);
+            case 5:return preferences.getBoolean(CALLS, true);
+            case 6:return preferences.getBoolean(WIFI, true);
+            case 7:return preferences.getBoolean(DATA, true);
+            case 8:return preferences.getBoolean(FLASHLIGHT, true);
+        }
+        return true;
     }
 
     @Override
