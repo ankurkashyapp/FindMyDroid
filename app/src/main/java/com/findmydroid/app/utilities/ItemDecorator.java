@@ -19,9 +19,9 @@ public class ItemDecorator extends RecyclerView.ItemDecoration {
         int itemCount = parent.getAdapter().getItemCount()-1;
         int itemPosition = parent.getChildAdapterPosition(view);
 
-        if(itemPosition != itemCount-1 || itemPosition != itemCount)
+        //if(itemPosition != itemCount-1 || itemPosition != itemCount)
             outRect.bottom = space;
-
+//
         if(itemPosition%2==0) {
             outRect.left = space;
             outRect.right = space;

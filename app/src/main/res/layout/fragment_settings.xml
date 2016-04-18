@@ -1,0 +1,223 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e7e7e7" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true">
+
+            <Button
+                android:id="@+id/device_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="#ca3a00"
+                android:text="Enable Device Admin"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/device_admin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="15dp"
+                android:text="What is this?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#BF3600"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+        </RelativeLayout>
+
+        <LinearLayout android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout1"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/additional_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shadow"
+                android:drawableLeft="@drawable/ic_additional_settings"
+                android:drawableRight="@drawable/list_down"
+                android:text="Additional Settings"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/uninstall_defence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shadow"
+                android:drawableLeft="@drawable/ic_uninstall_defence"
+                android:drawableRight="@drawable/list_down"
+                android:text="Uninstall Defence"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_below="@+id/linearLayout1"
+            android:background="@drawable/list_item_shadow">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Change App Password"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff4900"
+                android:textSize="20sp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/enter_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView1"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberPassword"
+                android:hint="Enter password"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="2dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/edittext_background" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enter_password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="numberPassword"
+                android:hint="Confirm password"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="2dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/edittext_background" />
+
+            <Button
+                android:id="@+id/update_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/confirm_password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Update"
+                android:background="@drawable/button_background"
+                android:drawableLeft="@drawable/ic_change_passwrod"
+                android:drawablePadding="2dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:typeface="serif" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:paddingBottom="20dp"
+            android:layout_below="@+id/relativeLayout2"
+            android:background="@drawable/list_item_shadow">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Notification Number"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff4900"
+                android:textSize="20sp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/notif_number_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Enter 1st Phone Number"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="2dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/edittext_background" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/notif_number_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notif_number_one"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Enter 2nd phone number"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="2dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/edittext_background" />
+
+            <Button
+                android:id="@+id/update_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notif_number_two"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="Update"
+                android:background="@drawable/button_background"
+                android:drawableLeft="@drawable/ic_change_passwrod"
+                android:drawablePadding="2dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:typeface="serif" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

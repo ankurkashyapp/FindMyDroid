@@ -1,5 +1,6 @@
 package com.findmydroid.app.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +17,9 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.findmydroid.app.R;
+import com.findmydroid.app.fragments.AppPasswordFragment;
 import com.findmydroid.app.fragments.HomeFragment;
+import com.findmydroid.app.fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         showHomeFragment();
+        showAppPasswordDialog();
     }
 
     @Override
@@ -91,6 +95,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    private void showAppPasswordDialog() {
+        AppPasswordFragment appPasswordFragment = AppPasswordFragment.newInstance();
+        appPasswordFragment.show(getSupportFragmentManager(), "AppPassword");
+    }
+
     private void showHomeFragment() {
         HomeFragment homeFragment = HomeFragment.newInstance();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -98,18 +107,18 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showSettingsFragment() {
-
+        SettingsFragment settingsFragment = SettingsFragment.newInstance();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragments_activity_main, settingsFragment, "SettingsFragment").commit();
     }
 
     private void showControlLostPhoneFragment() {
-
+        startActivity(new Intent(MainActivity.this, PlaceListActivity.class));
     }
 
     private void showShareDialog() {
-
     }
 
     private void showAboutFragment() {
-
     }
 }

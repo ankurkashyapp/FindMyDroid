@@ -12,5 +12,7 @@
     <color name="white">#fff</color>
     <color name="blackTransparent" >#a10e0d0d</color>
     <color name="blackDarkTransparent">#C80E0D0D</color>
+    <color name="blue_grey">#263238</color>
+    <color name="blue_grey_light">#455a64</color>
 
 </resources>
