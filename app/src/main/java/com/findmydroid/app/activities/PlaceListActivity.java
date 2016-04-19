@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.findmydroid.app.R;
 import com.findmydroid.app.adapters.PlacesAdapter;
 import com.findmydroid.app.utilities.ItemDecorator;
+import com.findmydroid.app.utilities.PlaceListDecorator;
 
 /**
  * Created by Ankur Kashyap on 11-04-2016.
@@ -31,9 +32,9 @@ public class PlaceListActivity extends AppCompatActivity implements PlacesAdapte
     private String[] placeReligious = {"TEMPLES", "MOSQUES", "CHURCHES"};
     private String[] placeMiscellaneous = {"BAR", "BUS STATION", "RAILWAY STATION", "LIBRARY", "PARK", "POST OFFICE", "RESTAURANT", "SCHOOL", "UNIVERSITY", "SHOPPING MALL"};
 
-    private int[] iconsMostVisited = {R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight};
-    private int[] iconsReligious = {R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight};
-    private int[] iconsMiscellaneous = {R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight, R.drawable.ic_feature_flashlight};
+    private int[] iconsMostVisited = {R.drawable.ic_atm, R.drawable.ic_bank, R.drawable.ic_gym, R.drawable.ic_hospital, R.drawable.ic_movie_theatre, R.drawable.ic_police};
+    private int[] iconsReligious = {R.drawable.ic_temple, R.drawable.ic_mosque, R.drawable.ic_church};
+    private int[] iconsMiscellaneous = {R.drawable.ic_bar, R.drawable.ic_bus_station, R.drawable.ic_railway_station, R.drawable.ic_library, R.drawable.ic_park, R.drawable.ic_post_office, R.drawable.ic_restaurant, R.drawable.ic_school, R.drawable.ic_university, R.drawable.ic_shopping_mall};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,17 +57,17 @@ public class PlaceListActivity extends AppCompatActivity implements PlacesAdapte
 
         placesMostVisited = (RecyclerView)findViewById(R.id.places_most_visited);
         placesMostVisited.setLayoutManager(layoutManager1);
-        placesMostVisited.addItemDecoration(new ItemDecorator(5));
+        placesMostVisited.addItemDecoration(new PlaceListDecorator(3));
 
         placesReligious = (RecyclerView)findViewById(R.id.places_religious);
         placesReligious.setLayoutManager(layoutManager2);
-        placesReligious.addItemDecoration(new ItemDecorator(5));
+        placesReligious.addItemDecoration(new PlaceListDecorator(3));
 
         placesMiscellaneous = (RecyclerView)findViewById(R.id.places_miscellaneous);
         placesMiscellaneous.setNestedScrollingEnabled(false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
         placesMiscellaneous.setLayoutManager(gridLayoutManager);
-        placesMiscellaneous.addItemDecoration(new ItemDecorator(3));
+        placesMiscellaneous.addItemDecoration(new PlaceListDecorator(3));
     }
 
     private void setupMostVisitedPlaces() {
@@ -95,14 +96,25 @@ public class PlaceListActivity extends AppCompatActivity implements PlacesAdapte
 
     private void mostVisitedClicked(View view) {
         int position = placesMostVisited.getChildLayoutPosition(view);
-        startActivity(new Intent(PlaceListActivity.this, ShowPlacesActivity.class));
+        Intent intent = new Intent(PlaceListActivity.this, ShowPlacesActivity.class);
+        intent.putExtra(ShowPlacesActivity.PLACE_POSITION, position);
+        intent.putExtra(ShowPlacesActivity.PLACE_TYPE, 1);
+        startActivity(intent);
     }
 
     private void religiousClicked(View view) {
         int position = placesReligious.getChildLayoutPosition(view);
+        Intent intent = new Intent(PlaceListActivity.this, ShowPlacesActivity.class);
+        intent.putExtra(ShowPlacesActivity.PLACE_POSITION, position);
+        intent.putExtra(ShowPlacesActivity.PLACE_TYPE, 2);
+        startActivity(intent);
     }
 
     private void miscellaneousClicked(View view) {
         int position = placesMiscellaneous.getChildLayoutPosition(view);
+        Intent intent = new Intent(PlaceListActivity.this, ShowPlacesActivity.class);
+        intent.putExtra(ShowPlacesActivity.PLACE_POSITION, position);
+        intent.putExtra(ShowPlacesActivity.PLACE_TYPE, 3);
+        startActivity(intent);
     }
 }

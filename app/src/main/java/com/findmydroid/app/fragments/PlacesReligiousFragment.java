@@ -12,49 +12,40 @@ import android.view.ViewGroup;
 import com.findmydroid.app.R;
 import com.findmydroid.app.activities.ShowPlacesActivity;
 import com.findmydroid.app.adapters.ViewPagerAdapter;
-import com.findmydroid.app.fragments.mostvisited.Atm;
-import com.findmydroid.app.fragments.mostvisited.Bank;
-import com.findmydroid.app.fragments.mostvisited.Gym;
-import com.findmydroid.app.fragments.mostvisited.Hospital;
-import com.findmydroid.app.fragments.mostvisited.MovieTheater;
-import com.findmydroid.app.fragments.mostvisited.PoliceStation;
+import com.findmydroid.app.fragments.religious.Church;
+import com.findmydroid.app.fragments.religious.Mosque;
+import com.findmydroid.app.fragments.religious.Temple;
 
 /**
- * Created by Ankur Kashyap on 18-04-2016.
+ * Created by Ankur Kashyap on 11/12/2015.
  */
-public class PlacesMostVisitedFragment extends Fragment {
-
+public class PlacesReligiousFragment extends Fragment {
     TabLayout tabLayout;
     ViewPager viewPager;
 
-    public static PlacesMostVisitedFragment newInstance(int placePosition) {
-        PlacesMostVisitedFragment placesMostVisitedFragment = new PlacesMostVisitedFragment();
+    public static PlacesReligiousFragment newInstance(int placePosition) {
+        PlacesReligiousFragment placesReligiousFragment = new PlacesReligiousFragment();
         Bundle data = new Bundle();
         data.putInt(ShowPlacesActivity.PLACE_POSITION, placePosition);
-        placesMostVisitedFragment.setArguments(data);
-        return placesMostVisitedFragment;
+        placesReligiousFragment.setArguments(data);
+        return placesReligiousFragment;
     }
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_show_places, null);
         tabLayout=(TabLayout)view.findViewById(R.id.tabLayout);
         viewPager=(ViewPager)view.findViewById(R.id.viewPager);
-        viewPager.setOffscreenPageLimit(0);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
         setUpViewPager();
         return view;
     }
 
     private void setUpViewPager() {
         ViewPagerAdapter pagerAdapter=new ViewPagerAdapter(getChildFragmentManager());
-        pagerAdapter.addFragment(new Atm(), "ATM");
-        pagerAdapter.addFragment(new Hospital(), "Hospital");
-        pagerAdapter.addFragment(new Gym(), "Gym");
-        pagerAdapter.addFragment(new Bank(), "Bank");
-        pagerAdapter.addFragment(new MovieTheater(), "Movie Theatre");
-        pagerAdapter.addFragment(new PoliceStation(), "Police Station");
+        pagerAdapter.addFragment(new Temple(), "Temple");
+        pagerAdapter.addFragment(new Mosque(), "Mosque");
+        pagerAdapter.addFragment(new Church(), "Church");
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setCurrentItem(getArguments().getInt(ShowPlacesActivity.PLACE_POSITION, 0));

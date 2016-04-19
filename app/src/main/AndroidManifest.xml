@@ -46,6 +46,13 @@
         <activity android:name=".activities.ShowPlacesActivity"
             android:label="Places" />
 
+        <activity android:name=".activities.DisplayOnMap"
+            android:label="All Places" />
+
+        <activity android:name=".activities.DisplayPlaceDetailsWithMap"
+            android:label="Place Details" />
+
+
         <receiver
             android:name="com.findmydroid.app.services.MyAdmin"
             android:description="@string/admin_description"

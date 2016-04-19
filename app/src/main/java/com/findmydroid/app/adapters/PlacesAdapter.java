@@ -30,7 +30,10 @@ public class PlacesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new PlacesViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view_place, parent, false), parent);
+        if (parent.getId() == R.id.places_most_visited || parent.getId() == R.id.places_religious)
+            return new PlacesViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view_place, parent, false), parent);
+        else
+            return new PlacesViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view_miscellaneous_places, parent, false), parent);
     }
 
     @Override
