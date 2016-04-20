@@ -60,8 +60,6 @@ public class FeaturesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         switch (holder.getItemViewType()) {
 
             case TYPE_HOME_SETTINGS: MainSettingsViewHolder settingsViewHolder = (MainSettingsViewHolder)holder;
-                settingsViewHolder.deviceAdmin.setDrawableLeft(R.drawable.ic_check);
-                settingsViewHolder.uninstallDefence.setDrawableLeft(R.drawable.ic_cross);
                 break;
 
             case TYPE_FEATURES: FeatureViewsHolder featureViewsHolder = (FeatureViewsHolder)holder;

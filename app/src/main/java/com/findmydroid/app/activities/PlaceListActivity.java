@@ -42,6 +42,8 @@ public class PlaceListActivity extends AppCompatActivity implements PlacesAdapte
         setContentView(R.layout.activity_place_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initViews();
         setupMostVisitedPlaces();

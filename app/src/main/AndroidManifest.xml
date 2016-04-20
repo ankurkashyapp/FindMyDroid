@@ -41,16 +41,20 @@
         </activity>
 
         <activity android:name=".activities.PlaceListActivity"
-            android:label="Places" />
+            android:label="Places"
+            android:parentActivityName=".activities.MainActivity" />
 
         <activity android:name=".activities.ShowPlacesActivity"
-            android:label="Places" />
+            android:label="Places"
+            android:parentActivityName=".activities.PlaceListActivity"/>
 
         <activity android:name=".activities.DisplayOnMap"
-            android:label="All Places" />
+            android:label="All Places"
+            android:parentActivityName=".activities.PlaceListActivity"/>
 
         <activity android:name=".activities.DisplayPlaceDetailsWithMap"
-            android:label="Place Details" />
+            android:label="Place Details"
+            android:parentActivityName=".activities.PlaceListActivity" />
 
 
         <receiver

@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_grey">
+    android:background="@color/grey_dark">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,14 +31,14 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="160dp"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/blue_grey_light">
+                    android:background="@color/grey_dark">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                             android:layout_height="wrap_content"
                             android:text="MOST VISITED PLACES"
                             android:textColor="@color/white"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:layout_centerVertical="true"/>
 
                         <Button
@@ -61,6 +61,7 @@
                             android:text="Show All"
                             android:textColor="@color/white"
                             android:elevation="10dp"
+                            android:visibility="gone"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:background="@drawable/selector_show_all_button"/>
 
@@ -70,7 +71,8 @@
                         android:id="@+id/places_most_visited"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"/>
 
                 </LinearLayout>
 
@@ -79,7 +81,7 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="160dp"
                 android:layout_marginTop="5dp">
 
                 <LinearLayout
@@ -87,7 +89,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
 
-                    android:background="@color/blue_grey_light">
+                    android:background="@color/grey_dark">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -99,7 +101,7 @@
                             android:layout_height="wrap_content"
                             android:text="RELIGIOUS PLACES"
                             android:textColor="@color/white"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:layout_centerVertical="true"/>
 
                         <Button
@@ -111,6 +113,7 @@
                             android:textColor="@color/white"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:elevation="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/selector_show_all_button"/>
 
                     </RelativeLayout>
@@ -119,7 +122,8 @@
                         android:id="@+id/places_religious"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"/>
 
                 </LinearLayout>
 
@@ -135,7 +139,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="3dp"
-                    android:background="@color/blue_grey_light">
+                    android:background="@color/grey_dark">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -148,7 +152,7 @@
                             android:text="MISCELLANEOUS"
                             android:layout_marginLeft="7dp"
                             android:textColor="@color/white"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:layout_centerVertical="true"/>
 
                         <Button
@@ -161,6 +165,7 @@
                             android:textColor="@color/white"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:elevation="10dp"
+                            android:visibility="gone"
                             android:background="@drawable/selector_show_all_button"/>
 
                     </RelativeLayout>

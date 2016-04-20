@@ -46,9 +46,9 @@ public class PlacesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private void setFeatureBackground(RelativeLayout featureBackground, int position) {
         switch (position) {
-            case 0:featureBackground.setBackgroundResource(R.drawable.ic_back_ringing);break;
+            case 0:featureBackground.setBackgroundResource(R.drawable.ic_back_data);break;
             case 1:featureBackground.setBackgroundResource(R.drawable.ic_back_lock);break;
-            case 2:featureBackground.setBackgroundResource(R.drawable.ic_back_calls);break;
+            case 2:featureBackground.setBackgroundResource(R.drawable.ic_back_flashlight);break;
             case 3:featureBackground.setBackgroundResource(R.drawable.ic_back_sd_card);break;
             case 4:featureBackground.setBackgroundResource(R.drawable.ic_back_ringing);break;
             case 5:featureBackground.setBackgroundResource(R.drawable.ic_back_calls);break;

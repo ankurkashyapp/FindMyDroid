@@ -30,6 +30,8 @@ public class ShowPlacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_places);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         placeType = getIntent().getIntExtra(PLACE_TYPE, 1);
         placePosition = getIntent().getIntExtra(PLACE_POSITION, 0);

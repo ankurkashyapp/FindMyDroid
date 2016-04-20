@@ -19,9 +19,6 @@ import android.widget.LinearLayout;
 
 import com.findmydroid.app.R;
 
-import fr.tvbarthel.lib.blurdialogfragment.BlurDialogEngine;
-import fr.tvbarthel.lib.blurdialogfragment.SupportBlurDialogFragment;
-
 /**
  * Created by Ankur Kashyap on 30-03-2016.
  */

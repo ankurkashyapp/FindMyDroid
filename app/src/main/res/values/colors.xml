@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#ef6c00</color>
-    <color name="colorPrimaryDark">#e65100</color>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#E64A19</color>
     <color name="colorPrimarySlightDark">#c94700</color>
     <color name="colorPrimaryExtraDark">#bf360c</color>
-    <color name="colorAccent">#ef6c00</color>
+    <color name="colorAccent">#448AFF</color>
 
     <!-- Project Colors -->
 
     <color name="white">#fff</color>
-    <color name="blackTransparent" >#a10e0d0d</color>
+    <color name="grey">#eeeeee</color>
+    <color name="primaryText">#212121</color>
+    <color name="blackTransparent" >#62bf360c</color>
     <color name="blackDarkTransparent">#C80E0D0D</color>
-    <color name="blue_grey">#263238</color>
-    <color name="blue_grey_light">#455a64</color>
+    <color name="grey_light">#757575</color>
+    <color name="grey_dark">#212121</color>
 
 </resources>
