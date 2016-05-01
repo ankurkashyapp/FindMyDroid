@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.findmydroid.app.R;
+import com.findmydroid.app.adapters.ListViewAdapter;
 
 import java.util.ArrayList;
 
@@ -59,11 +60,11 @@ public class GettingPlaceDetails extends AsyncTask<Void, Void, ArrayList<PlaceCo
         SharedPreferences sharedPreferences=context.getSharedPreferences("ALL_PLACES_DETAILS_SHARED_PREFERENCES"+placeType, Context.MODE_PRIVATE);
         Log.e("GettingPlaceDetails", "Name: " + sharedPreferences.getString(placeType + "_0_name", "No element found"));
 
-        ListViewAdapter listViewAdapter=new ListViewAdapter(context, location, allPlacesDetailsArray);
+        ListViewAdapter listViewAdapter=new ListViewAdapter(context, location, allPlacesDetailsArray, placeType);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View listHeader = inflater.inflate(R.layout.list_header, null);
-        if(listView.getHeaderViewsCount()==0)
+        if(listView.getHeaderViewsCount() == 0)
             listView.addHeaderView(listHeader);
 
         listView.setAdapter(listViewAdapter);

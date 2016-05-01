@@ -3,19 +3,26 @@
     android:id="@+id/list_row"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="60dp"
     android:background="@drawable/selector_custom_list_row_background">
+
+    <ImageView
+        android:id="@+id/place_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_atm"
+        android:layout_centerVertical="true"/>
 
     <TextView
         android:id="@+id/place_name"
-        android:layout_width="match_parent"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/place_distance"
+        android:layout_toRightOf="@+id/place_icon"
         android:gravity="left"
-        android:layout_marginRight="10dp"
-        android:paddingLeft="10dp"
-        android:ellipsize="start"
+        android:layout_marginLeft="3dp"
+        android:paddingLeft="5dp"
+        android:ellipsize="marquee"
         android:textColor="@color/white"/>
 
     <TextView
@@ -23,8 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/rightArrow"
+        android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         android:padding="3dp"
         android:background="@drawable/place_distance_view_background"
         android:textColor="@color/white" />
